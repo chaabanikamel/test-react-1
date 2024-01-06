@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
       <div className="container-fluid">
@@ -26,7 +26,6 @@ export const NavBar = () => {
                 }
                 to="/about"
               >
-                
                 About
                 <span className="visually-hidden">(current)</span>
               </NavLink>
@@ -57,5 +56,4 @@ export const NavBar = () => {
     </nav>
   );
 };
-
-
+export default NavBar;

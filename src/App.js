@@ -1,20 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
-import About from "./components/About"
-import BasicForm from "./formInput/BasicForm"
+import {  Routes, Route } from "react-router-dom";
+import { NavBar,About,Contact } from "./components";
+import { BasicForm } from "./formInput";
 
-
+import { ShowProduct } from "./showProduct";
+import { ProductContextProvider } from "./showProduct/ProductContext";
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <Router>
-        <Routes>
+       <ProductContextProvider>
+       <Routes>
           <Route path="/about" element={<About/>}/>
           <Route path="/input" element={<BasicForm/>}/>
-      
+          <Route path="/contact" element = {<Contact/>} />
+          <Route path ="/product" element = {<ShowProduct/>}/>   
         </Routes>
-      </Router>
+       </ProductContextProvider>
+      
     </div>
   );
 }
